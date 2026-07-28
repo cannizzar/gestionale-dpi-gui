@@ -1,4 +1,4 @@
-name: Build DPI Manager EXEon:push:branches: [ "main", "master" ]workflow_dispatch:jobs:build:runs-on: windows-lateststeps:
+steps:
   - name: Checkout Repository
     uses: actions/checkout@v4
 
@@ -21,4 +21,3 @@ name: Build DPI Manager EXEon:push:branches: [ "main", "master" ]workflow_dispat
     with:
       name: Gestionale_DPI_Windows_App
       path: dist/Gestionale_DPI_GUI.exe
-
