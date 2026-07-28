@@ -1,4 +1,16 @@
 name: Build DPI Manager EXE
+
+on:
+push:
+branches:
+- main
+- master
+workflow_dispatch:
+
+jobs:
+build:
+runs-on: windows-latest
+
 steps:
   # STREAMING_CHUNK:Checking out the repository code...
   - name: Checkout Repository
