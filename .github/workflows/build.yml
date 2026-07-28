@@ -1,28 +1,29 @@
-name: Build DPI Manager EXE
 
-steps:
-  # STREAMING_CHUNK:Checking out repository source code...
+name: Build DPI Manager EXEon:
+push:
+branches:
+- main
+- master
+workflow_dispatch:jobs:
+build:
+runs-on: windows-lateststeps:
   - name: Checkout Repository
     uses: actions/checkout@v4
 
-  # STREAMING_CHUNK:Setting up Python environment...
   - name: Set up Python Environment
     uses: actions/setup-python@v5
     with:
       python-version: '3.11'
 
-  # STREAMING_CHUNK:Installing PyInstaller build tool...
   - name: Install Dependencies
     run: |
       python -m pip install --upgrade pip
       pip install pyinstaller
 
-  # STREAMING_CHUNK:Building GUI executable without console window...
   - name: Build GUI Executable
     run: |
       pyinstaller --onefile --noconsole --name "Gestionale_DPI_GUI" app.py
 
-  # STREAMING_CHUNK:Uploading generated executable artifact...
   - name: Upload Executable Artifact
     uses: actions/upload-artifact@v4
     with:
