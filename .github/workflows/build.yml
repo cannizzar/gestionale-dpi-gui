@@ -1,5 +1,5 @@
-
-name: Build DPI Manager EXEon:
+name: Build DPI Manager EXE
+on:
 push:
 branches:
 - main
