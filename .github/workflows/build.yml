@@ -1,28 +1,3 @@
-STREAMING_CHUNK:Defining workflow metadata and triggers...name: Build DPI Manager EXEon:push:branches:- main- masterworkflow_dispatch:jobs:build:runs-on: windows-lateststeps:
-  # STREAMING_CHUNK:Checking out repository code...
-  - name: Checkout Repository
-    uses: actions/checkout@v4
-
-  # STREAMING_CHUNK:Setting up Python environment...
-  - name: Set up Python Environment
-    uses: actions/setup-python@v5
-    with:
-      python-version: '3.11'
-
-  # STREAMING_CHUNK:Installing PyInstaller build tool...
-  - name: Install Dependencies
-    run: |
-      python -m pip install --upgrade pip
-      pip install pyinstaller
-
-  # STREAMING_CHUNK:Building GUI Windows executable...
-  - name: Build GUI Executable
-    run: |
-      pyinstaller --onefile --noconsole --name "Gestionale_DPI_GUI" app.py
-
-  # STREAMING_CHUNK:Uploading generated application artifact...
-  - name: Upload Executable Artifact
-    uses: actions/upload-artifact@v4
-    with:
-      name: Gestionale_DPI_Windows_App
-      path: dist/Gestionale_DPI_GUI.exe
+name: Build DPI Manager EXE
+on:push:branches:- main- master workflow_dispatch:
+jobs:build:runs-on: windows-latest
