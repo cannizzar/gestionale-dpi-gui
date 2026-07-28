@@ -9,8 +9,8 @@ steps:
   # STREAMING_CHUNK:Setting up Python environment...
   - name: Set up Python Environment
     uses: actions/setup-python@v5
-    with: 
-    python-version: '3.11'
+    with:
+      python-version: '3.11'
 
   # STREAMING_CHUNK:Installing PyInstaller build tool...
   - name: Install Dependencies
