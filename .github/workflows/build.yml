@@ -1,3 +1,4 @@
+name: Build DPI Manager EXE
 steps:
   # STREAMING_CHUNK:Checking out the repository code...
   - name: Checkout Repository
